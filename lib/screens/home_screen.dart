@@ -20,6 +20,7 @@ class HomeScreenState extends State<HomeScreen>{
     @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: SafeArea(
         
         child: Padding(
@@ -79,15 +80,56 @@ class HomeScreenState extends State<HomeScreen>{
                       fontWeight: FontWeight.bold
               )
               ),
-              Row(
-                children: [
-                  Catagory(title: "Crimes",icon: Icon(
-                    Icons.developer_board,
-                  
-                  ),
-                  color: Colors.lightBlue,)
-                ],
+              SizedBox(
+                height: 8,
               ),
+               Row (
+                  children: [
+                      Catagory(title: "Business",icon: Image.asset("assets/icons/growth.png",
+                      width: 35,
+                      height: 35,
+                      ),
+                      color: Colors.lightBlue,),
+                    
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Catagory(title: "health",icon: Image.asset("assets/icons/health.png",
+                    width: 35,
+                    height: 35,
+                    ),
+                    color: Colors.lightBlue,),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Catagory(title: "science",icon: Image.asset("assets/icons/science.png",
+                    width: 35,
+                    height: 35,
+                    ),
+                    color: Colors.lightBlue,
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Catagory(title: "history",icon: Image.asset("assets/icons/history.png",
+                    width: 35,
+                    height: 35,
+                    ),
+                    color: Colors.lightBlue,
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                   /* Catagory(title: "crimes",icon: Image.asset("assets/icons/crime.png",
+                    width: 35,
+                    height: 35,
+                    ),
+                    color: Colors.lightBlue,
+                    ),*/
+                    
+                  ]
+                ),
+
               SizedBox(
                 height: 12,
               ),
@@ -98,11 +140,26 @@ class HomeScreenState extends State<HomeScreen>{
                       fontWeight: FontWeight.bold
               )
               ),
+              SizedBox(
+                height: 12,
+              ),
+             Expanded(
+                child: ListView(
+                  scrollDirection: Axis.vertical,
+                      children: [
+                        Podcast(title: "test", channel: "test"),
+                        Podcast(title: "test", channel: "test"),
+                        Podcast(title: "test", channel: "test"),
+                        Podcast(title: "test", channel: "test"),
+                      ],
+                    ),
+              ),
+            ] 
+            ),
               
-            ],
+            )
           ),
-        )
-      ),
-    );
+      );
+    
   }
 }

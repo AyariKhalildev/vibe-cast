@@ -2,6 +2,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:vibe_cast/screens/podcastplayscreen.dart';
 
 class Catagory extends StatelessWidget{
   const Catagory({
@@ -11,26 +12,31 @@ class Catagory extends StatelessWidget{
     required this.color,
   });
   final String title;
-  final Icon icon;
+  final Image icon;
   final Color color;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 70,
-      width: 70,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.0),
-        color: color, 
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, 
+        MaterialPageRoute(builder: (builder) => Podcastplayscreen()));
+      },
+      child: SizedBox(
+        height: 80,
+        width: 80,
+        child: Card(
+          color: color,
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                icon,
+                Text(title)
+              ],
+            ),
+          ),
       ),
-      child: Center(
-        child: Column(
-          children: [
-            icon,
-            Text(title)
-          ],
-        ),
-      ),
-    );
+      );
+    
     
     
   }

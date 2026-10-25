@@ -14,41 +14,34 @@ class Podcast extends StatelessWidget{
       onTap: () {
         print("listining to the podcast");
       },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.0),
-              color: Colors.lightBlue,
-            ),
-            width : 70,
-            height: 70,
+      child: ListTile(
+        leading: Container(
+          height: 60,
+          width: 60,
+          decoration: BoxDecoration(
+            color: Colors.pink,
+            borderRadius: BorderRadius.circular(8.0)
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-              ),),
-              Text(channel)
-            ],
-          ),
-          Container(
-            height: 30,
-            width: 30,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              shape: BoxShape.circle,
-            ),
-            child: Icon(
-              Icons.play_arrow,
-              color : Colors.white,
-            ),
-          )
-        ],
+        ),
+        title: Text("the title here $title",
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          
+        ),
+        ),
+        subtitle: Text("the subtitle here $channel"),
+        trailing: Container(
+                height: 35,
+                width: 35,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color : Colors.black,
+                ),
+                child: Icon(
+                  Icons.play_arrow,
+                  color: Colors.white,
+                ),
+              ),
       ),
     );
     
