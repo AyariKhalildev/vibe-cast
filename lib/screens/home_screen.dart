@@ -120,12 +120,12 @@ class HomeScreenState extends State<HomeScreen>{
                     SizedBox(
                       width: 8,
                     ),
-                   /* Catagory(title: "crimes",icon: Image.asset("assets/icons/crime.png",
+                   Catagory(title: "crimes",icon: Image.asset("assets/icons/crime.png",
                     width: 35,
                     height: 35,
                     ),
                     color: Colors.lightBlue,
-                    ),*/
+                    ),
                     
                   ]
                 ),
