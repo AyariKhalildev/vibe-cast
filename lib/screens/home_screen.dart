@@ -9,6 +9,9 @@ class HomeScreen  extends StatefulWidget{
 }
 class HomeScreenState extends State<HomeScreen>{
   var _podCasts;
+  
+  int currHour = DateTime.now().hour;
+ 
   Future<void> loadData() async { 
     
     
@@ -29,6 +32,8 @@ class HomeScreenState extends State<HomeScreen>{
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
+                currHour >= 12 ?
+                "Good evening" :
                 "Good morning",
                 style: TextStyle(
                   color: Colors.grey,
@@ -120,12 +125,12 @@ class HomeScreenState extends State<HomeScreen>{
                     SizedBox(
                       width: 8,
                     ),
-                   Catagory(title: "crimes",icon: Image.asset("assets/icons/crime.png",
+                  /* Catagory(title: "crimes",icon: Image.asset("assets/icons/crime.png",
                     width: 35,
                     height: 35,
                     ),
                     color: Colors.lightBlue,
-                    ),
+                    ),*/
                     
                   ]
                 ),
